@@ -9,7 +9,7 @@ using std::ofstream;
 using std::string;
 
 int Create_DaqConfigStart(string RunId) {
-    string filename = RunId + "_SerenityDaqConfigurationStart.yaml";
+    string filename = RunId + "/" + RunId + "_SerenityDaqConfigurationStart.yaml";
 
 
 
@@ -17,8 +17,12 @@ int Create_DaqConfigStart(string RunId) {
     FILE *o_file = fopen(filename.c_str(), "w+");
     if (o_file) {
         fwrite(text.c_str(), 1, text.size(), o_file);
-        cerr << "Done Writing!" << endl;
     }
+    else {
+        cerr << "Error opening file: " << filename << endl;
+        return EXIT_FAILURE;
+    }
+    fclose(o_file);
 
     
     return EXIT_SUCCESS;
