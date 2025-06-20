@@ -1,0 +1,24 @@
+Source: SerenityTrg
+BoardId: SerenityU
+Timestamp: 1738939942
+TrgTcds2e:
+  EnableL1APhysics: 0
+  EnableL1ARandom: 0
+  EnableL1ASoftware: 0
+  EnableL1ARegular: 0
+  L1APrbsThreshold: 16777195
+  L1ARegularGap: 712
+  EnableNZSRegular: 0
+  EnableNZSRandom: 0
+  EnableNZSPhysics: 0
+  CalComingToL1A: 510
+  TTSEnable: 7
+  L1APhysicsEnable: 255
+  SequencerRunCtrl: 0
+  SequencerLength: 2
+  SequencerData:
+    - 15728896
+    - 16056448
+TrgExternal:
+  Delay: 0
+  WindowSelect: 0

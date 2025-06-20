@@ -1,0 +1,117 @@
+Source: SerenityFramer
+BoardId: SerenityU
+Timestamp: 1738939945
+Framer:
+  LpGbtMGT:
+    - Link: 48
+      Elink:
+        - Address: 6
+          Shift: 0
+        - Address: 5
+          Shift: 0
+        - Address: 4
+          Shift: 0
+        - Address: 3
+          Shift: 0
+        - Address: 2
+          Shift: 0
+        - Address: 1
+          Shift: 0
+        - Address: 0
+          Shift: 0
+    - Link: 49
+      Elink:
+        - Address: 6
+          Shift: 0
+        - Address: 5
+          Shift: 0
+        - Address: 4
+          Shift: 0
+        - Address: 3
+          Shift: 0
+        - Address: 2
+          Shift: 0
+        - Address: 1
+          Shift: 0
+        - Address: 0
+          Shift: 0
+    - Link: 50
+      Elink:
+        - Address: 6
+          Shift: 7
+        - Address: 5
+          Shift: 9
+        - Address: 4
+          Shift: 5
+        - Address: 3
+          Shift: 0
+        - Address: 2
+          Shift: 0
+        - Address: 1
+          Shift: 0
+        - Address: 0
+          Shift: 0
+    - Link: 51
+      Elink:
+        - Address: 6
+          Shift: 7
+        - Address: 5
+          Shift: 8
+        - Address: 4
+          Shift: 5
+        - Address: 3
+          Shift: 0
+        - Address: 2
+          Shift: 0
+        - Address: 1
+          Shift: 0
+        - Address: 0
+          Shift: 0
+    - Link: 57
+      Elink:
+        - Address: 2
+          Shift: 0
+        - Address: 1
+          Shift: 0
+        - Address: 0
+          Shift: 0
+        - Address: 4
+          Shift: 0
+        - Address: 3
+          Shift: 0
+        - Address: 6
+          Shift: 0
+        - Address: 5
+          Shift: 0
+    - Link: 58
+      Elink:
+        - Address: 2
+          Shift: 131
+        - Address: 1
+          Shift: 131
+        - Address: 0
+          Shift: 134
+        - Address: 4
+          Shift: 134
+        - Address: 3
+          Shift: 133
+        - Address: 6
+          Shift: 133
+        - Address: 5
+          Shift: 133
+    - Link: 59
+      Elink:
+        - Address: 2
+          Shift: 131
+        - Address: 1
+          Shift: 131
+        - Address: 0
+          Shift: 134
+        - Address: 4
+          Shift: 134
+        - Address: 3
+          Shift: 133
+        - Address: 6
+          Shift: 133
+        - Address: 5
+          Shift: 133

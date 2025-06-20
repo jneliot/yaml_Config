@@ -1,0 +1,14 @@
+Source: SerenitySlink
+BoardId: SerenityU
+Timestamp: 1738939944
+ReferenceClock: 2
+QPllLock: 1
+NumberOfSlinkQuads: 1
+Quad:
+  - SlinkKind: 5
+    NumberOfQuadChannels: 2
+    Channel:
+      - SourceId: 3722304989
+        CoreStatusAddress: 0
+      - SourceId: 2863311530
+        CoreStatusAddress: 0

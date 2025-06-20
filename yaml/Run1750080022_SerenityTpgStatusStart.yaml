@@ -1,0 +1,100 @@
+Source: SerenityTpg
+BoardId: SerenityU
+Timestamp: 1750080028
+TpgControl:
+  NumberOfLpGbtPairs: 2
+  LpGbtPair:
+    - UnpackerBlock:
+        NumberOfUnpackers: 4
+        Counters:
+          - Locked: 0
+            ValidPacket: 0
+            Bc0Packet: 0
+          - Locked: 0
+            ValidPacket: 0
+            Bc0Packet: 0
+          - Locked: 0
+            ValidPacket: 0
+            Bc0Packet: 0
+          - Locked: 0
+            ValidPacket: 0
+            Bc0Packet: 0
+      SelfTrigger:
+        TriggerCounter: 0
+    - UnpackerBlock:
+        NumberOfUnpackers: 6
+        Counters:
+          - Locked: 0
+            ValidPacket: 0
+            Bc0Packet: 0
+          - Locked: 0
+            ValidPacket: 0
+            Bc0Packet: 0
+          - Locked: 0
+            ValidPacket: 0
+            Bc0Packet: 0
+          - Locked: 0
+            ValidPacket: 0
+            Bc0Packet: 0
+          - Locked: 0
+            ValidPacket: 0
+            Bc0Packet: 0
+          - Locked: 0
+            ValidPacket: 0
+            Bc0Packet: 0
+      SelfTrigger:
+        TriggerCounter: 0
+TpgReadout:
+  SlinkBackpressureLatch: 0
+  PacketCount: 0
+  NumberOfChannels: 14
+  Channel:
+    - EventBufferMaxOccupancy: 0
+      EventBufferOverflow: 0
+      AddressBufferOverflow: 0
+    - EventBufferMaxOccupancy: 0
+      EventBufferOverflow: 0
+      AddressBufferOverflow: 0
+    - EventBufferMaxOccupancy: 0
+      EventBufferOverflow: 0
+      AddressBufferOverflow: 0
+    - EventBufferMaxOccupancy: 0
+      EventBufferOverflow: 0
+      AddressBufferOverflow: 0
+    - EventBufferMaxOccupancy: 0
+      EventBufferOverflow: 0
+      AddressBufferOverflow: 0
+    - EventBufferMaxOccupancy: 0
+      EventBufferOverflow: 0
+      AddressBufferOverflow: 0
+    - EventBufferMaxOccupancy: 0
+      EventBufferOverflow: 0
+      AddressBufferOverflow: 0
+    - EventBufferMaxOccupancy: 0
+      EventBufferOverflow: 0
+      AddressBufferOverflow: 0
+    - EventBufferMaxOccupancy: 0
+      EventBufferOverflow: 0
+      AddressBufferOverflow: 0
+    - EventBufferMaxOccupancy: 0
+      EventBufferOverflow: 0
+      AddressBufferOverflow: 0
+    - EventBufferMaxOccupancy: 0
+      EventBufferOverflow: 0
+      AddressBufferOverflow: 0
+    - EventBufferMaxOccupancy: 0
+      EventBufferOverflow: 0
+      AddressBufferOverflow: 0
+    - EventBufferMaxOccupancy: 0
+      EventBufferOverflow: 0
+      AddressBufferOverflow: 0
+    - EventBufferMaxOccupancy: 0
+      EventBufferOverflow: 0
+      AddressBufferOverflow: 0
+TpgFastControl:
+  EventCounter: 0
+  OrbitCounter: 4
+  SlinkFifoMaxOccupancy: 2
+  SlinkFifoFullRisingEdgeCounter: 0
+  SlinkFifoWriteEnableCounter: 0
+  SlinkFifoReadEnableCounter: 0

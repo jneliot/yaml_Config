@@ -1,0 +1,256 @@
+Source: SerenityDaq
+BoardId: SerenityU
+Timestamp: 1750076667
+DaqControl:
+  Version: 2
+  NumberOfSlinks: 1
+  Slink:
+    - Channel:
+        CaptureBlockReadStart: 1
+        CaptureBlockReadEnd: 1
+  NumberOfLpGbtPairs: 3
+  LpGbtPair:
+    - Capture:
+        EcondHeaderPattern: 340
+        DisableBackpressure: 1
+        AllowBxMismatch: 1
+        NumberOfEconds: 0
+        EcondMemory:
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+        EcondId:
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+      FastControl:
+        UserCommand: 54
+        UserCommandBx: 1
+        Stream:
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+      Decoder:
+        ForceLock: 0
+        PreL1aOffset: 2
+    - Capture:
+        EcondHeaderPattern: 340
+        DisableBackpressure: 0
+        AllowBxMismatch: 1
+        NumberOfEconds: 6
+        EcondMemory:
+          - StartAddress: 0
+            EndAddress: 1999
+          - StartAddress: 2000
+            EndAddress: 3999
+          - StartAddress: 4000
+            EndAddress: 5999
+          - StartAddress: 6000
+            EndAddress: 7999
+          - StartAddress: 8000
+            EndAddress: 9999
+          - StartAddress: 10000
+            EndAddress: 11999
+          - StartAddress: 12000
+            EndAddress: 13999
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+        EcondId:
+          - Id: 2
+          - Id: 3
+          - Id: 1
+          - Id: 3
+          - Id: 0
+          - Id: 15
+          - Id: 15
+          - Id: 4
+          - Id: 15
+          - Id: 4
+          - Id: 15
+          - Id: 5
+          - Id: 15
+          - Id: 5
+      FastControl:
+        UserCommand: 54
+        UserCommandBx: 1
+        Stream:
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+      Decoder:
+        ForceLock: 0
+        PreL1aOffset: 2
+    - Capture:
+        EcondHeaderPattern: 340
+        DisableBackpressure: 1
+        AllowBxMismatch: 1
+        NumberOfEconds: 0
+        EcondMemory:
+          - StartAddress: 0
+            EndAddress: 1999
+          - StartAddress: 2000
+            EndAddress: 3999
+          - StartAddress: 4000
+            EndAddress: 5999
+          - StartAddress: 6000
+            EndAddress: 7999
+          - StartAddress: 8000
+            EndAddress: 9999
+          - StartAddress: 10000
+            EndAddress: 11999
+          - StartAddress: 12000
+            EndAddress: 13999
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+          - StartAddress: 16383
+            EndAddress: 16383
+        EcondId:
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+          - Id: 15
+      FastControl:
+        UserCommand: 54
+        UserCommandBx: 1
+        Stream:
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+          - CalPulseType: 1
+            LoopUserCommand: 0
+            LinkResetCommand: 0
+      Decoder:
+        ForceLock: 0
+        PreL1aOffset: 2
+DaqGlobalCapture:
+  BcrResetValue: 1
+  OcrResetValue: 0
+  TimeoutLimit: 8000
+  EcondIdlePattern: 13421823
+DaqFastControl:
+  L1aStretch: 0
+  SlinkFifoOffset: 0
+  EnableSlinkFifoThrottle: 1
+  L1aEcrEnable: 0
+  OcrEnable: 0
+  OcrPeriod: 8
+  PreL1aOffsetOverride3: 3
+  PreL1aOffsetOverride3Enable: 0
+  CalPulseIntDelay: 8
+  CalPulseExtDelay: 10
