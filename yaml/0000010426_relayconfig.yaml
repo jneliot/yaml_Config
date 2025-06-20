@@ -1,1 +1,0 @@
-{0: {econ_d: {}, econ_t: {}, roc: {}}, final: {econ_d: {}, econ_t: {}, roc: {}}, herd: {daq: {l1aStretchValue: 0, relayType: Default, relayTypeValue: 999}, tpg: {l1aStretchValue: 0, relayType: SelfTrigger, relayTypeValue: 999}, trg: {l1aStretchValue: 0, relayType: Test, relayTypeValue: 10}}, initial: {econ_d: {}, econ_t: {}, roc: {}}}
