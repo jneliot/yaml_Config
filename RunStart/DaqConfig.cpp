@@ -20,5 +20,6 @@ int Create_DaqConfigStart(string RunId) {
         cerr << "Done Writing!" << endl;
     }
 
+    
     return EXIT_SUCCESS;
 }
