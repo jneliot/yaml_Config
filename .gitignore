@@ -1,6 +1,8 @@
-.vscode
-/yaml
+.vscode/
+yaml/
 .DS_Store
 .gitignore
 *.dSYM
 /Run17*
+.DS_Store
+RunStart
