@@ -3,7 +3,7 @@
 
 using namespace std;
 
-char* get_BoardId() {
+string get_BoardId() {
     // Placeholder for actual board ID retrieval logic
     return "SerenityU";
 }
@@ -46,7 +46,7 @@ int get_AllowBxMismatch(int lpgbtPair_idx = 0) {
 
 int get_NumberOfEconds(int lpgbtPair_idx = 0) {
     // Placeholder for actual number of Econds retrieval logic
-    return 2; 
+    return 0; 
 }
 
 int* get_Econd_addresses(int lpgbtPair_idx = 0, int econd_idx = 0) {

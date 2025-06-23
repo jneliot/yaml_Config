@@ -29,8 +29,8 @@ int Create_DaqConfigStart(string RunId) {
     }
 
     cout << "  NumberOfLpGbtPairs: " << get_NumberOfLpGbtPairs() << "\n";
+    cout << "  LpGbtPair: \n";
     for(int i = 0; i < get_NumberOfLpGbtPairs(); ++i) {
-        cout << "  LpGbtPair: \n";
         cout << "    - Capture: \n";
         cout << "      EcondHeaderPattern: " << get_EcondHeaderPattern(i) << "\n";
         cout << "      DisableBackpressure: " << get_DisableBackpressure(i) << "\n";
@@ -38,7 +38,7 @@ int Create_DaqConfigStart(string RunId) {
         cout << "      NumberOfEconds: " << get_NumberOfEconds(i) << "\n";
 
         cout << "      EcondMemory:\n";
-        for(int j = 0; j < 8; ++j) {
+        for(int j = 0; j < 12; ++j) {
             int* addresses = get_Econd_addresses(i, j);
             cout << "        - StartAddress: " << addresses[0] << "\n";
             cout << "          EndAddress: " << addresses[1] << "\n";
@@ -79,7 +79,7 @@ int Create_DaqConfigStart(string RunId) {
     cout << "    PreL1aOffsetOverride3: " << get_PreL1aOffsetOverride3() << "\n";
     cout << "    PreL1aOffsetOverride3Enable: " << get_PreL1aOffsetOverride3Enable() << "\n";
     cout << "    CalPulseIntDelay: " << get_CalPulseIntDelay() << "\n";
-    cout << "    CalPulseExtDelay: 1" << get_CalPulseExtDelay() << "\n";
+    cout << "    CalPulseExtDelay: " << get_CalPulseExtDelay() << "\n";
 
 
 
