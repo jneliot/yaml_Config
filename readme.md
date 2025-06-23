@@ -1,10 +1,10 @@
-## Génération de fichiers .yaml pour la configuraiton de HGCAL
+# Génération de fichiers .yaml pour la configuraiton de HGCAL
 
 - Generates templates of the .yaml files of HGCAL
 - All parameters can be modified and accessed in the get_XX() functions implemented in the headers files
 - RunId is "Run" + time from epoch
 
-# Commandes
+## Commandes
 
 ```
 make
