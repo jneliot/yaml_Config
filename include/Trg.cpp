@@ -13,43 +13,36 @@ using namespace std;
 //-------------------------------------------------------------------
 //                      Trg Config File
 
-int Create_TrgConfig(string RunId) {
-    string filename = RunId + "/" + RunId + "_SerenityTrgConfigurationStart.yaml";
-    ofstream cout(filename.c_str());
+int Create_TrgConfig(string RunId,  ofstream& fileOut) {
 
-    if (!cout) {
-        cerr << "Error opening file: " << filename << endl;
-        return EXIT_FAILURE;
-    }
-
-    cout << "Source: SerenityTrg\n";
-    cout << "BoardId: " << get_BoardId() << "\n";
-    cout << "Timestamp: " << time(nullptr) << "\n";
-    cout << "TrgTcds2e:\n";
-    cout << "  EnableL1APhysics: " << get_EnableL1APhysics() << "\n";
-    cout << "  EnableL1ARandom: " << get_EnableL1ARandom() << "\n";
-    cout << "  EnableL1ASoftware: " << get_EnableL1ASoftware() << "\n";
-    cout << "  EnableL1ARegular: " << get_EnableL1ARegular() << "\n";
-    cout << "  L1APrbsThreshold: " << get_L1APrbsThreshold() << "\n";
-    cout << "  L1ARegularGap: " << get_L1ARegularGap() << "\n";
-    cout << "  EnableNZSRegular: " << get_EnableNZSRegular() << "\n";
-    cout << "  EnableNZSRandom: " << get_EnableNZSRandom() << "\n";
-    cout << "  EnableNZSPhysics: " << get_EnableNZSPhysics() << "\n";
-    cout << "  CalComingToL1A: " << get_CalComingToL1A() << "\n";
-    cout << "  TTSEnable: " << get_TTSEnable() << "\n";
-    cout << "  L1APhysicsEnable: " << get_L1APhysicsEnable() << "\n";
-    cout << "  SequencerRunCtrl: " << get_SequencerRunCtrl() << "\n";
-    cout << "  SequencerLength: " << get_SequencerLength() << "\n";
-    cout << "  SequencerData:\n";
+    fileOut << "Source: SerenityTrg\n";
+    fileOut << "BoardId: " << get_BoardId() << "\n";
+    fileOut << "Timestamp: " << time(nullptr) << "\n";
+    fileOut << "TrgTcds2e:\n";
+    fileOut << "  EnableL1APhysics: " << get_EnableL1APhysics() << "\n";
+    fileOut << "  EnableL1ARandom: " << get_EnableL1ARandom() << "\n";
+    fileOut << "  EnableL1ASoftware: " << get_EnableL1ASoftware() << "\n";
+    fileOut << "  EnableL1ARegular: " << get_EnableL1ARegular() << "\n";
+    fileOut << "  L1APrbsThreshold: " << get_L1APrbsThreshold() << "\n";
+    fileOut << "  L1ARegularGap: " << get_L1ARegularGap() << "\n";
+    fileOut << "  EnableNZSRegular: " << get_EnableNZSRegular() << "\n";
+    fileOut << "  EnableNZSRandom: " << get_EnableNZSRandom() << "\n";
+    fileOut << "  EnableNZSPhysics: " << get_EnableNZSPhysics() << "\n";
+    fileOut << "  CalComingToL1A: " << get_CalComingToL1A() << "\n";
+    fileOut << "  TTSEnable: " << get_TTSEnable() << "\n";
+    fileOut << "  L1APhysicsEnable: " << get_L1APhysicsEnable() << "\n";
+    fileOut << "  SequencerRunCtrl: " << get_SequencerRunCtrl() << "\n";
+    fileOut << "  SequencerLength: " << get_SequencerLength() << "\n";
+    fileOut << "  SequencerData:\n";
 
     vector<unsigned int> sequencerData = get_SequencerData();
     for (const auto& data : sequencerData) {
-        cout << "    - " << data << "\n";
+        fileOut << "    - " << data << "\n";
     }
 
-    cout << "TrgExternal:\n";
-    cout << "  Delay: " << get_Delay() << "\n";
-    cout << "  WindowSelect: " << get_WindowSelect() << "\n";
+    fileOut << "TrgExternal:\n";
+    fileOut << "  Delay: " << get_Delay() << "\n";
+    fileOut << "  WindowSelect: " << get_WindowSelect() << "\n";
 
     return EXIT_SUCCESS;
 }
@@ -59,14 +52,14 @@ int Create_TrgConfig(string RunId) {
 
 int Create_TrgConfigStart(string RunId) {
     string filename = RunId + "/" + RunId + "_SerenityTrgConfigStart.yaml";
-    ofstream cout(filename.c_str());
+    ofstream fileOut(filename.c_str());
 
-    if (!cout) {
+    if (!fileOut) {
         cerr << "Error opening file: " << filename << endl;
         return EXIT_FAILURE;
     }
 
-    return Create_TrgConfig(RunId);
+    return Create_TrgConfig(RunId, fileOut);
 }
 
 //-------------------------------------------------------------------
@@ -74,14 +67,14 @@ int Create_TrgConfigStart(string RunId) {
 
 int Create_TrgConfigStop(string RunId) {
     string filename = RunId + "/" + RunId + "_SerenityTrgConfigStop.yaml";
-    ofstream cout(filename.c_str());
+    ofstream fileOut(filename.c_str());
 
-    if (!cout) {
+    if (!fileOut) {
         cerr << "Error opening file: " << filename << endl;
         return EXIT_FAILURE;
     }
 
-    return Create_TrgConfig(RunId);
+    return Create_TrgConfig(RunId, fileOut);
 }
 
 
@@ -93,46 +86,46 @@ int Create_TrgConfigStop(string RunId) {
 //-------------------------------------------------------------------
 //                      Trg status File
 
-int Create_TrgStatus(string RunId) {
+int Create_TrgStatus(string RunId, ofstream& fileOut) {
 
-    cout << "Source: SerenityTrg\n";
-    cout << "BoardId: " << get_BoardId() << "\n";
-    cout << "Timestamp: " << time(nullptr) << "\n";
-    cout << "TrgControl:\n";
-    cout << "  NumberOfLpGbtPairs: " << get_NumberOfLpGbtPairs() << "\n";
-    cout << "  LpGbtPair:\n";
+    fileOut << "Source: SerenityTrg\n";
+    fileOut << "BoardId: " << get_BoardId() << "\n";
+    fileOut << "Timestamp: " << time(nullptr) << "\n";
+    fileOut << "TrgControl:\n";
+    fileOut << "  NumberOfLpGbtPairs: " << get_NumberOfLpGbtPairs() << "\n";
+    fileOut << "  LpGbtPair:\n";
 
     for (int i = 0; i < get_NumberOfLpGbtPairs(); ++i) {
-        cout << "    - UnpackerBlock:\n";
-        cout << "      NumberOfUnpackers: " << get_NumberOfUnpackers(i) << "\n";
-        cout << "      Counters:\n";
+        fileOut << "    - UnpackerBlock:\n";
+        fileOut << "      NumberOfUnpackers: " << get_NumberOfUnpackers(i) << "\n";
+        fileOut << "      Counters:\n";
         for (int j = 0; j < get_NumberOfUnpackers(i); ++j) {
-            cout << "        - Locked: " << get_Locked(i, j) << "\n";
-            cout << "          ValidPacket: " << get_ValidPacket(i, j) << "\n";
-            cout << "          Bc0Packet: " << get_Bc0Packet(i, j) << "\n";
+            fileOut << "        - Locked: " << get_Locked(i, j) << "\n";
+            fileOut << "          ValidPacket: " << get_ValidPacket(i, j) << "\n";
+            fileOut << "          Bc0Packet: " << get_Bc0Packet(i, j) << "\n";
         }
-        cout << "      SelfTrigger:\n";
-        cout << "        TriggerCounter: " << get_TriggerCounter(i) << "\n";
+        fileOut << "      SelfTrigger:\n";
+        fileOut << "        TriggerCounter: " << get_TriggerCounter(i) << "\n";
     }
 
-    cout << "  TrgReadout:\n";
-    cout << "    SlinkBackpressureLatch: " << get_SlinkBackpressureLatch() << "\n";
-    cout << "    PacketCount: " << get_PacketCount() << "\n";
-    cout << "    NumberOfChannels: " << get_NumberOfChannels() << "\n";
-    cout << "    Channel:\n";
+    fileOut << "  TrgReadout:\n";
+    fileOut << "    SlinkBackpressureLatch: " << get_SlinkBackpressureLatch() << "\n";
+    fileOut << "    PacketCount: " << get_PacketCount() << "\n";
+    fileOut << "    NumberOfChannels: " << get_NumberOfChannels() << "\n";
+    fileOut << "    Channel:\n";
     for (int i = 0; i < get_NumberOfChannels(); ++i) {
-        cout << "      - EventBufferMaxOccupancy: " << get_EventBufferMaxOccupancy(i) << "\n";
-        cout << "        EventBufferOverflow: " << get_EventBufferOverflow(i) << "\n";
-        cout << "        AddressBufferOverflow: " << get_AddressBufferOverflow(i) << "\n";
+        fileOut << "      - EventBufferMaxOccupancy: " << get_EventBufferMaxOccupancy(i) << "\n";
+        fileOut << "        EventBufferOverflow: " << get_EventBufferOverflow(i) << "\n";
+        fileOut << "        AddressBufferOverflow: " << get_AddressBufferOverflow(i) << "\n";
     }
 
-    cout << "  TrgFastControl:\n";
-    cout << "    EventCounter: " << get_EventCounter() << "\n";
-    cout << "    OrbitCounter: " << get_OrbitCounter() << "\n";
-    cout << "    SlinkFifoMaxOccupancy: " << get_SlinkFifoMaxOccupancy() << "\n";
-    cout << "    SlinkFifoFullRisingEdgeCounter: " << get_SlinkFifoFullRisingEdgeCounter() << "\n";
-    cout << "    SlinkFifoWriteEnableCounter: " << get_SlinkFifoWriteEnableCounter() << "\n";
-    cout << "    SlinkFifoReadEnableCounter: " << get_SlinkFifoReadEnableCounter() << "\n";
+    fileOut << "  TrgFastControl:\n";
+    fileOut << "    EventCounter: " << get_EventCounter() << "\n";
+    fileOut << "    OrbitCounter: " << get_OrbitCounter() << "\n";
+    fileOut << "    SlinkFifoMaxOccupancy: " << get_SlinkFifoMaxOccupancy() << "\n";
+    fileOut << "    SlinkFifoFullRisingEdgeCounter: " << get_SlinkFifoFullRisingEdgeCounter() << "\n";
+    fileOut << "    SlinkFifoWriteEnableCounter: " << get_SlinkFifoWriteEnableCounter() << "\n";
+    fileOut << "    SlinkFifoReadEnableCounter: " << get_SlinkFifoReadEnableCounter() << "\n";
 
     return EXIT_SUCCESS;
 }
@@ -142,14 +135,14 @@ int Create_TrgStatus(string RunId) {
 
 int Create_TrgStatusStart(string RunId) {
     string filename = RunId + "/" + RunId + "_SerenityTrgStatusStart.yaml";
-    ofstream cout(filename.c_str());
+    ofstream fileOut(filename.c_str());
 
-    if (!cout) {
+    if (!fileOut) {
         cerr << "Error opening file: " << filename << endl;
         return EXIT_FAILURE;
     }
 
-    return Create_TrgStatus(RunId);
+    return Create_TrgStatus(RunId, fileOut);
 }
 
 //-------------------------------------------------------------------
@@ -157,12 +150,12 @@ int Create_TrgStatusStart(string RunId) {
 
 int Create_TrgStatusStop(string RunId) {
     string filename = RunId + "/" + RunId + "_SerenityTrgStatusStop.yaml";
-    ofstream cout(filename.c_str());
+    ofstream fileOut(filename.c_str());
 
-    if (!cout) {
+    if (!fileOut) {
         cerr << "Error opening file: " << filename << endl;
         return EXIT_FAILURE;
     }
 
-    return Create_TrgStatus(RunId);
+    return Create_TrgStatus(RunId, fileOut);
 }

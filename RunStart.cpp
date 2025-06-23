@@ -18,15 +18,15 @@ string RunId = "Run" + to_string(timestamp); //Create RunId with current timesta
 
 int main() {
 
-    cout << "Creating Run Files: " << RunId << "\n" << endl;
+    cout << "Creating Run Files: " << RunId << endl;
 
     if (mkdir(RunId.c_str(), 0777) == -1){
         cerr << "Error :  " << strerror(errno) << endl;
     }
     else
-        cout << "Directory created" << endl;
+        cout << "Directory created\n" << endl;
 
-    cout << "Start phase.... \n" << endl;
+    cout << "***************\nStart phase.... \n***************" << endl;
     
     cout << "\n\nStarting DAQ Configuration" << endl;
     Create_DaqConfigStart(RunId);
@@ -66,10 +66,10 @@ int main() {
 
     cout << "Starting Trg Status" << endl;
     Create_TrgStatusStart(RunId);
-    cout << "Trg Status created successfully" << endl;
+    cout << "Trg Status created successfully\n\n" << endl;
 
 
-    cout << "Stop phase.... \n" << endl;
+    cout << "***************\nStop phase....\n***************" << endl;
     
     cout << "\n\nStarting DAQ Configuration" << endl;
     Create_DaqConfigStop(RunId);

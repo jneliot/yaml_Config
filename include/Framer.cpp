@@ -11,21 +11,21 @@ using namespace std;
 //-------------------------------------------------------------------
 //                    Framer Config File
 
- int Create_FramerConfig(string RunId) {
+ int Create_FramerConfig(string RunId, ofstream& fileOut) {
 
-    cout << "Source: SerenityFramer\n";
-    cout << "BoardId: " << get_BoardId() << "\n";
-    cout << "Timestamp: " << time(nullptr) << "\n";
-    cout << "Framer:\n";
-    cout << "  LpGbtMGT:\n";
+    fileOut << "Source: SerenityFramer\n";
+    fileOut << "BoardId: " << get_BoardId() << "\n";
+    fileOut << "Timestamp: " << time(nullptr) << "\n";
+    fileOut << "Framer:\n";
+    fileOut << "  LpGbtMGT:\n";
 
     vector<Link> links = get_LpGbtMGT();
     for (const auto& link : links) {
-        cout << "    - Link: " << link.LinkNumber << "\n";
-        cout << "      Elink:\n";
+        fileOut << "    - Link: " << link.LinkNumber << "\n";
+        fileOut << "      Elink:\n";
         for (const auto& elink : link.Elinks) {
-            cout << "        - Address: " << elink.Address << "\n";
-            cout << "          Shift: " << elink.Shift << "\n";
+            fileOut << "        - Address: " << elink.Address << "\n";
+            fileOut << "          Shift: " << elink.Shift << "\n";
         }
     }
 
@@ -37,14 +37,14 @@ using namespace std;
 
 int Create_FramerConfigStart(string RunId) {
     string filename = RunId + "/" + RunId + "_SerenityFramerConfigStart.yaml";
-    ofstream cout(filename.c_str());
+    ofstream fileOut(filename.c_str());
 
-    if (!cout) {
+    if (!fileOut) {
         cerr << "Error opening file: " << filename << endl;
         return EXIT_FAILURE;
     }
 
-    return Create_FramerConfig(RunId);
+    return Create_FramerConfig(RunId, fileOut);
 }
 
 //-------------------------------------------------------------------
@@ -52,12 +52,12 @@ int Create_FramerConfigStart(string RunId) {
 
 int Create_FramerConfigStop(string RunId) {
     string filename = RunId + "/" + RunId + "_SerenityFramerConfigStop.yaml";
-    ofstream cout(filename.c_str());
+    ofstream fileOut(filename.c_str());
 
-    if (!cout) {
+    if (!fileOut) {
         cerr << "Error opening file: " << filename << endl;
         return EXIT_FAILURE;
     }
 
-    return Create_FramerConfig(RunId);
+    return Create_FramerConfig(RunId, fileOut);
 }

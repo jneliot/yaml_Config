@@ -10,11 +10,11 @@ using namespace std;
 //-------------------------------------------------------------------
 //                      Fec Config File
 
-int Create_FecConfig(string RunId) {
+int Create_FecConfig(string RunId, ofstream& fileOut) {
 
-    cout << "Source: SerenityFec\n";
-    cout << "BoardId: " << get_BoardId() << "\n";
-    cout << "Timestamp: " << time(nullptr) << "\n";
+    fileOut << "Source: SerenityFec\n";
+    fileOut << "BoardId: " << get_BoardId() << "\n";
+    fileOut << "Timestamp: " << time(nullptr) << "\n";
 
     return EXIT_SUCCESS;
 }
@@ -24,14 +24,14 @@ int Create_FecConfig(string RunId) {
 
 int Create_FecConfigStart(string RunId) {
     string filename = RunId + "/" + RunId + "_SerenityDaqConfigStart.yaml";
-    ofstream cout(filename.c_str());
+    ofstream fileOut(filename.c_str());
 
-    if (!cout) {
+    if (!fileOut) {
         cerr << "Error opening file: " << filename << endl;
         return EXIT_FAILURE;
     }
 
-    return Create_FecConfig(RunId);
+    return Create_FecConfig(RunId, fileOut);
 }
 
 //-------------------------------------------------------------------
@@ -39,14 +39,14 @@ int Create_FecConfigStart(string RunId) {
 
 int Create_FecConfigStop(string RunId) {
     string filename = RunId + "/" + RunId + "_SerenityFecConfigStop.yaml";
-    ofstream cout(filename.c_str());
+    ofstream fileOut(filename.c_str());
 
-    if (!cout) {
+    if (!fileOut) {
         cerr << "Error opening file: " << filename << endl;
         return EXIT_FAILURE;
     }
 
-    return Create_FecConfig(RunId);
+    return Create_FecConfig(RunId, fileOut);
 }
 
 
@@ -57,11 +57,11 @@ int Create_FecConfigStop(string RunId) {
 //-------------------------------------------------------------------
 //                      Fec Status File
 
-int Create_FecStatus(string RunId) {
+int Create_FecStatus(string RunId,  ofstream& fileOut) {
 
-    cout << "Source: SerenityFec\n";
-    cout << "BoardId: " << get_BoardId() << "\n";
-    cout << "Timestamp: " << time(nullptr) << "\n";
+    fileOut << "Source: SerenityFec\n";
+    fileOut << "BoardId: " << get_BoardId() << "\n";
+    fileOut << "Timestamp: " << time(nullptr) << "\n";
 
     return EXIT_SUCCESS;
 }
@@ -71,14 +71,14 @@ int Create_FecStatus(string RunId) {
 
 int Create_FecStatusStart(string RunId) {
     string filename = RunId + "/" + RunId + "_SerenityDaqStatusStart.yaml";
-    ofstream cout(filename.c_str());
+    ofstream fileOut(filename.c_str());
 
-    if (!cout) {
+    if (!fileOut) {
         cerr << "Error opening file: " << filename << endl;
         return EXIT_FAILURE;
     }
 
-    return Create_FecStatus(RunId);
+    return Create_FecStatus(RunId, fileOut);
 }
 
 //-------------------------------------------------------------------
@@ -86,12 +86,12 @@ int Create_FecStatusStart(string RunId) {
 
 int Create_FecStatusStop(string RunId) {
     string filename = RunId + "/" + RunId + "_SerenityFecStatusStop.yaml";
-    ofstream cout(filename.c_str());
+    ofstream fileOut(filename.c_str());
 
-    if (!cout) {
+    if (!fileOut) {
         cerr << "Error opening file: " << filename << endl;
         return EXIT_FAILURE;
     }
 
-    return Create_FecStatus(RunId);
+    return Create_FecStatus(RunId, fileOut);
 }

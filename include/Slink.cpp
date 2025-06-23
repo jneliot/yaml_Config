@@ -11,24 +11,24 @@
 //-------------------------------------------------------------------
 //                           SLink File
 
-int Create_SlinkConfig(string RunId) {
+int Create_SlinkConfig(string RunId, ofstream& fileOut) {
 
-    cout << "Source: SerenitySlink\n";
-    cout << "BoardId: " << get_BoardId() << "\n";
-    cout << "Timestamp: " << time(nullptr) << "\n";
-    cout << "ReferenceClock: " << get_ReferenceClock() << "\n";
-    cout << "QPllLock: " << get_QPllLock() << "\n";
-    cout << "NumberOfSlinkQuads: " << get_NumberOfSlinkQuads() << "\n";
+    fileOut << "Source: SerenitySlink\n";
+    fileOut << "BoardId: " << get_BoardId() << "\n";
+    fileOut << "Timestamp: " << time(nullptr) << "\n";
+    fileOut << "ReferenceClock: " << get_ReferenceClock() << "\n";
+    fileOut << "QPllLock: " << get_QPllLock() << "\n";
+    fileOut << "NumberOfSlinkQuads: " << get_NumberOfSlinkQuads() << "\n";
 
     vector<Quad> quads = get_Quads();
     for (const auto& quad : quads) {
-        cout << "Quad:\n";
-        cout << "  - SlinkKind: " << quad.SlinkKind << "\n";
-        cout << "    NumberOfQuadChannels: " << quad.NumberOfQuadChannels << "\n";
-        cout << "    Channel:\n";
+        fileOut << "Quad:\n";
+        fileOut << "  - SlinkKind: " << quad.SlinkKind << "\n";
+        fileOut << "    NumberOfQuadChannels: " << quad.NumberOfQuadChannels << "\n";
+        fileOut << "    Channel:\n";
         for (const auto& channel : quad.Channels) {
-            cout << "      - SourceId: " << channel.SourceId << "\n";
-            cout << "        CoreStatusAddress: " << channel.CoreStatusAddress << "\n";
+            fileOut << "      - SourceId: " << channel.SourceId << "\n";
+            fileOut << "        CoreStatusAddress: " << channel.CoreStatusAddress << "\n";
         }
     }
 
@@ -40,14 +40,14 @@ int Create_SlinkConfig(string RunId) {
 
 int Create_SlinkConfigStart(string RunId) {
     string filename = RunId + "/" + RunId + "_SerenitySLinkConfigStart.yaml";
-    ofstream cout(filename.c_str());
+    ofstream fileOut(filename.c_str());
 
-    if (!cout) {
+    if (!fileOut) {
         cerr << "Error opening file: " << filename << endl;
         return EXIT_FAILURE;
     }
 
-    return Create_SlinkConfig(RunId);
+    return Create_SlinkConfig(RunId, fileOut);
 }
 
 //-------------------------------------------------------------------
@@ -55,12 +55,12 @@ int Create_SlinkConfigStart(string RunId) {
 
 int Create_SlinkConfigStop(string RunId) {
     string filename = RunId + "/" + RunId + "_SerenitySLinkConfigStop.yaml";
-    ofstream cout(filename.c_str());
+    ofstream fileOut(filename.c_str());
 
-    if (!cout) {
+    if (!fileOut) {
         cerr << "Error opening file: " << filename << endl;
         return EXIT_FAILURE;
     }
 
-    return Create_SlinkConfig(RunId);
+    return Create_SlinkConfig(RunId, fileOut);
 }

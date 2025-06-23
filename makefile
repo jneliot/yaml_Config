@@ -14,4 +14,4 @@ clean:
 	rm -f RunStart
 
 clear:
-	rm -rf Run175062*/
+	rm -rf Run1750*/
