@@ -4,12 +4,12 @@
 - All parameters can be modified and accessed in the get_XX() functions implemented in the headers files
 - RunId is "Run" + time from epoch
 
-'''
+```
 make clear
-'''
+```
 to clear all Run directories
 
-'''
+```
 make clean
-'''
+```
 to clear executable files
