@@ -10,36 +10,6 @@ using namespace std;
                              Tpg Config
  -------------------------------------------------------------------*/
 
- //-------------------------------------------------------------------
-//                           Tpg Start
-
-int Create_TpgConfigStart(string RunId) {
-    string filename = RunId + "/" + RunId + "_SerenityTpgConfigStart.yaml";
-    ofstream cout(filename.c_str());
-
-    if (!cout) {
-        cerr << "Error opening file: " << filename << endl;
-        return EXIT_FAILURE;
-    }
-
-    return Create_TpgConfig(RunId);
-}
-
-//-------------------------------------------------------------------
-//                          Tpg Stop
-
-int Create_TpgConfigStop(string RunId) {
-    string filename = RunId + "/" + RunId + "_SerenityTpgConfigStop.yaml";
-    ofstream cout(filename.c_str());
-
-    if (!cout) {
-        cerr << "Error opening file: " << filename << endl;
-        return EXIT_FAILURE;
-    }
-
-    return Create_TpgConfig(RunId);
-}
-
 //-------------------------------------------------------------------
 //                        Tpg Config File
 
@@ -93,16 +63,11 @@ int Create_TpgConfig(string RunId) {
     return EXIT_SUCCESS;
 }
 
-
-/*-------------------------------------------------------------------
-                             Tpg Status
- -------------------------------------------------------------------*/
-
 //-------------------------------------------------------------------
 //                           Tpg Start
 
-int Create_TpgStatusStart(string RunId) {
-    string filename = RunId + "/" + RunId + "_SerenityTpgStatusStart.yaml";
+int Create_TpgConfigStart(string RunId) {
+    string filename = RunId + "/" + RunId + "_SerenityTpgConfigStart.yaml";
     ofstream cout(filename.c_str());
 
     if (!cout) {
@@ -110,14 +75,14 @@ int Create_TpgStatusStart(string RunId) {
         return EXIT_FAILURE;
     }
 
-    return Create_TpgStatus(RunId);
+    return Create_TpgConfig(RunId);
 }
 
 //-------------------------------------------------------------------
 //                          Tpg Stop
 
-int Create_TpgStatusStop(string RunId) {
-    string filename = RunId + "/" + RunId + "_SerenityTpgStatusStop.yaml";
+int Create_TpgConfigStop(string RunId) {
+    string filename = RunId + "/" + RunId + "_SerenityTpgConfigStop.yaml";
     ofstream cout(filename.c_str());
 
     if (!cout) {
@@ -125,8 +90,13 @@ int Create_TpgStatusStop(string RunId) {
         return EXIT_FAILURE;
     }
 
-    return Create_TpgStatus(RunId);
+    return Create_TpgConfig(RunId);
 }
+
+
+/*-------------------------------------------------------------------
+                             Tpg Status
+ -------------------------------------------------------------------*/
 
 //-------------------------------------------------------------------
 //                      Tpg status File
@@ -173,4 +143,34 @@ int Create_TpgStatus(string RunId) {
     cout << "    SlinkFifoReadEnableCounter: " << get_SlinkFifoReadEnableCounter() << "\n";
 
     return EXIT_SUCCESS;
+}
+
+//-------------------------------------------------------------------
+//                           Tpg Start
+
+int Create_TpgStatusStart(string RunId) {
+    string filename = RunId + "/" + RunId + "_SerenityTpgStatusStart.yaml";
+    ofstream cout(filename.c_str());
+
+    if (!cout) {
+        cerr << "Error opening file: " << filename << endl;
+        return EXIT_FAILURE;
+    }
+
+    return Create_TpgStatus(RunId);
+}
+
+//-------------------------------------------------------------------
+//                          Tpg Stop
+
+int Create_TpgStatusStop(string RunId) {
+    string filename = RunId + "/" + RunId + "_SerenityTpgStatusStop.yaml";
+    ofstream cout(filename.c_str());
+
+    if (!cout) {
+        cerr << "Error opening file: " << filename << endl;
+        return EXIT_FAILURE;
+    }
+
+    return Create_TpgStatus(RunId);
 }

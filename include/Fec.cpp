@@ -8,6 +8,18 @@ using namespace std;
 -------------------------------------------------------------------*/
 
 //-------------------------------------------------------------------
+//                      Fec Config File
+
+int Create_FecConfig(string RunId) {
+
+    cout << "Source: SerenityFec\n";
+    cout << "BoardId: " << get_BoardId() << "\n";
+    cout << "Timestamp: " << time(nullptr) << "\n";
+
+    return EXIT_SUCCESS;
+}
+
+//-------------------------------------------------------------------
 //                          Fec Start
 
 int Create_FecConfigStart(string RunId) {
@@ -19,7 +31,7 @@ int Create_FecConfigStart(string RunId) {
         return EXIT_FAILURE;
     }
 
-    return Create_FecStatus(RunId);
+    return Create_FecConfig(RunId);
 }
 
 //-------------------------------------------------------------------
@@ -37,10 +49,15 @@ int Create_FecConfigStop(string RunId) {
     return Create_FecConfig(RunId);
 }
 
-//-------------------------------------------------------------------
-//                      Fec Config File
 
-int Create_FecConfig(string RunId) {
+/*-------------------------------------------------------------------
+                            Fec Status
+-------------------------------------------------------------------*/
+
+//-------------------------------------------------------------------
+//                      Fec Status File
+
+int Create_FecStatus(string RunId) {
 
     cout << "Source: SerenityFec\n";
     cout << "BoardId: " << get_BoardId() << "\n";
@@ -48,11 +65,6 @@ int Create_FecConfig(string RunId) {
 
     return EXIT_SUCCESS;
 }
-
-
-/*-------------------------------------------------------------------
-                            Fec Status
--------------------------------------------------------------------*/
 
 //-------------------------------------------------------------------
 //                          Fec Start
@@ -82,16 +94,4 @@ int Create_FecStatusStop(string RunId) {
     }
 
     return Create_FecStatus(RunId);
-}
-
-//-------------------------------------------------------------------
-//                      Fec Status File
-
-int Create_FecStatus(string RunId) {
-
-    cout << "Source: SerenityFec\n";
-    cout << "BoardId: " << get_BoardId() << "\n";
-    cout << "Timestamp: " << time(nullptr) << "\n";
-
-    return EXIT_SUCCESS;
 }

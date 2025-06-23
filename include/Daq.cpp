@@ -9,35 +9,6 @@ using namespace std;
 -------------------------------------------------------------------*/
 
 //-------------------------------------------------------------------
-//                          Daq Start
-int Create_DaqConfigStart(string RunId) {
-    string filename = RunId + "/" + RunId + "_SerenityDaqConfigStart.yaml";
-    ofstream cout(filename.c_str());
-
-    if (!cout) {
-        cerr << "Error opening file: " << filename << endl;
-        return EXIT_FAILURE;
-    }
-
-    return Create_DaqConfig(RunId);
-}
-
-//-------------------------------------------------------------------
-//                          Daq Stop
-
-int Create_DaqConfigStop(string RunId) {
-    string filename = RunId + "/" + RunId + "_SerenityDaqConfigStop.yaml";
-    ofstream cout(filename.c_str());
-
-    if (!cout) {
-        cerr << "Error opening file: " << filename << endl;
-        return EXIT_FAILURE;
-    }
-
-    return Create_DaqConfig(RunId);
-}
-
-//-------------------------------------------------------------------
 //                     Daq Config File
 
 int Create_DaqConfig(string RunId) {
@@ -116,15 +87,10 @@ int Create_DaqConfig(string RunId) {
     return EXIT_SUCCESS;
 }
 
-/*-------------------------------------------------------------------
-                            Daq Status
--------------------------------------------------------------------*/
-
 //-------------------------------------------------------------------
 //                          Daq Start
-
-int Create_DaqStatusStart(string RunId) {
-    string filename = RunId + "/" + RunId + "_SerenityDaqStatusStart.yaml";
+int Create_DaqConfigStart(string RunId) {
+    string filename = RunId + "/" + RunId + "_SerenityDaqConfigStart.yaml";
     ofstream cout(filename.c_str());
 
     if (!cout) {
@@ -132,14 +98,14 @@ int Create_DaqStatusStart(string RunId) {
         return EXIT_FAILURE;
     }
 
-    return Create_DaqStatus(RunId);
+    return Create_DaqConfig(RunId);
 }
 
 //-------------------------------------------------------------------
 //                          Daq Stop
 
-int Create_DaqStatusStop(string RunId) {
-    string filename = RunId + "/" + RunId + "_SerenityDaqStatusStop.yaml";
+int Create_DaqConfigStop(string RunId) {
+    string filename = RunId + "/" + RunId + "_SerenityDaqConfigStop.yaml";
     ofstream cout(filename.c_str());
 
     if (!cout) {
@@ -147,8 +113,12 @@ int Create_DaqStatusStop(string RunId) {
         return EXIT_FAILURE;
     }
 
-    return Create_DaqStatus(RunId);
+    return Create_DaqConfig(RunId);
 }
+
+/*-------------------------------------------------------------------
+                            Daq Status
+-------------------------------------------------------------------*/
 
 //-------------------------------------------------------------------
 //                      Daq Status File
@@ -201,4 +171,34 @@ int Create_DaqStatus(string RunId) {
     cout << "    SlinkFifoReadEnableCounter: " << get_SlinkFifoReadEnableCounter() << "\n";
 
     return EXIT_SUCCESS;
+}
+
+//-------------------------------------------------------------------
+//                          Daq Start
+
+int Create_DaqStatusStart(string RunId) {
+    string filename = RunId + "/" + RunId + "_SerenityDaqStatusStart.yaml";
+    ofstream cout(filename.c_str());
+
+    if (!cout) {
+        cerr << "Error opening file: " << filename << endl;
+        return EXIT_FAILURE;
+    }
+
+    return Create_DaqStatus(RunId);
+}
+
+//-------------------------------------------------------------------
+//                          Daq Stop
+
+int Create_DaqStatusStop(string RunId) {
+    string filename = RunId + "/" + RunId + "_SerenityDaqStatusStop.yaml";
+    ofstream cout(filename.c_str());
+
+    if (!cout) {
+        cerr << "Error opening file: " << filename << endl;
+        return EXIT_FAILURE;
+    }
+
+    return Create_DaqStatus(RunId);
 }

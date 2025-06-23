@@ -11,4 +11,7 @@ RunStart.o: RunStart.cpp
 	$(CXX) $(CXXFLAGS) -c RunStart.cpp -o RunStart.o
 
 clean:
-	rm -f RunStart.o
+	rm -f RunStart
+
+clear:
+	rm -rf Run175062*/

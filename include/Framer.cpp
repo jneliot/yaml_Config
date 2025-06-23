@@ -9,6 +9,30 @@ using namespace std;
  -------------------------------------------------------------------*/
 
 //-------------------------------------------------------------------
+//                    Framer Config File
+
+ int Create_FramerConfig(string RunId) {
+
+    cout << "Source: SerenityFramer\n";
+    cout << "BoardId: " << get_BoardId() << "\n";
+    cout << "Timestamp: " << time(nullptr) << "\n";
+    cout << "Framer:\n";
+    cout << "  LpGbtMGT:\n";
+
+    vector<Link> links = get_LpGbtMGT();
+    for (const auto& link : links) {
+        cout << "    - Link: " << link.LinkNumber << "\n";
+        cout << "      Elink:\n";
+        for (const auto& elink : link.Elinks) {
+            cout << "        - Address: " << elink.Address << "\n";
+            cout << "          Shift: " << elink.Shift << "\n";
+        }
+    }
+
+    return EXIT_SUCCESS;
+}
+
+//-------------------------------------------------------------------
 //                           Framer Start
 
 int Create_FramerConfigStart(string RunId) {
@@ -36,28 +60,4 @@ int Create_FramerConfigStop(string RunId) {
     }
 
     return Create_FramerConfig(RunId);
-}
-
-//-------------------------------------------------------------------
-//                    Framer Config File
-
- int Create_FramerConfig(string RunId) {
-
-    cout << "Source: SerenityFramer\n";
-    cout << "BoardId: " << get_BoardId() << "\n";
-    cout << "Timestamp: " << time(nullptr) << "\n";
-    cout << "Framer:\n";
-    cout << "  LpGbtMGT:\n";
-
-    vector<Link> links = get_LpGbtMGT();
-    for (const auto& link : links) {
-        cout << "    - Link: " << link.LinkNumber << "\n";
-        cout << "      Elink:\n";
-        for (const auto& elink : link.Elinks) {
-            cout << "        - Address: " << elink.Address << "\n";
-            cout << "          Shift: " << elink.Shift << "\n";
-        }
-    }
-
-    return EXIT_SUCCESS;
 }

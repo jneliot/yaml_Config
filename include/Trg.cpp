@@ -10,36 +10,6 @@ using namespace std;
                              Trg Config
  -------------------------------------------------------------------*/
 
- //-------------------------------------------------------------------
-//                           Trg Start
-
-int Create_TrgConfigStart(string RunId) {
-    string filename = RunId + "/" + RunId + "_SerenityTrgConfigStart.yaml";
-    ofstream cout(filename.c_str());
-
-    if (!cout) {
-        cerr << "Error opening file: " << filename << endl;
-        return EXIT_FAILURE;
-    }
-
-    return Create_TrgConfig(RunId);
-}
-
-//-------------------------------------------------------------------
-//                          Trg Stop
-
-int Create_TrgConfigStop(string RunId) {
-    string filename = RunId + "/" + RunId + "_SerenityTrgConfigStop.yaml";
-    ofstream cout(filename.c_str());
-
-    if (!cout) {
-        cerr << "Error opening file: " << filename << endl;
-        return EXIT_FAILURE;
-    }
-
-    return Create_TrgConfig(RunId);
-}
-
 //-------------------------------------------------------------------
 //                      Trg Config File
 
@@ -84,15 +54,11 @@ int Create_TrgConfig(string RunId) {
     return EXIT_SUCCESS;
 }
 
-/*-------------------------------------------------------------------
-                             Trg Status
- -------------------------------------------------------------------*/
-
- //-------------------------------------------------------------------
+//-------------------------------------------------------------------
 //                           Trg Start
 
-int Create_TrgStatusStart(string RunId) {
-    string filename = RunId + "/" + RunId + "_SerenityTrgStatusStart.yaml";
+int Create_TrgConfigStart(string RunId) {
+    string filename = RunId + "/" + RunId + "_SerenityTrgConfigStart.yaml";
     ofstream cout(filename.c_str());
 
     if (!cout) {
@@ -100,14 +66,14 @@ int Create_TrgStatusStart(string RunId) {
         return EXIT_FAILURE;
     }
 
-    return Create_TrgStatus(RunId);
+    return Create_TrgConfig(RunId);
 }
 
 //-------------------------------------------------------------------
 //                          Trg Stop
 
-int Create_TrgStatusStop(string RunId) {
-    string filename = RunId + "/" + RunId + "_SerenityTrgStatusStop.yaml";
+int Create_TrgConfigStop(string RunId) {
+    string filename = RunId + "/" + RunId + "_SerenityTrgConfigStop.yaml";
     ofstream cout(filename.c_str());
 
     if (!cout) {
@@ -115,8 +81,14 @@ int Create_TrgStatusStop(string RunId) {
         return EXIT_FAILURE;
     }
 
-    return Create_TrgStatus(RunId);
+    return Create_TrgConfig(RunId);
 }
+
+
+
+/*-------------------------------------------------------------------
+                             Trg Status
+ -------------------------------------------------------------------*/
 
 //-------------------------------------------------------------------
 //                      Trg status File
@@ -163,4 +135,34 @@ int Create_TrgStatus(string RunId) {
     cout << "    SlinkFifoReadEnableCounter: " << get_SlinkFifoReadEnableCounter() << "\n";
 
     return EXIT_SUCCESS;
+}
+
+//-------------------------------------------------------------------
+//                           Trg Start
+
+int Create_TrgStatusStart(string RunId) {
+    string filename = RunId + "/" + RunId + "_SerenityTrgStatusStart.yaml";
+    ofstream cout(filename.c_str());
+
+    if (!cout) {
+        cerr << "Error opening file: " << filename << endl;
+        return EXIT_FAILURE;
+    }
+
+    return Create_TrgStatus(RunId);
+}
+
+//-------------------------------------------------------------------
+//                          Trg Stop
+
+int Create_TrgStatusStop(string RunId) {
+    string filename = RunId + "/" + RunId + "_SerenityTrgStatusStop.yaml";
+    ofstream cout(filename.c_str());
+
+    if (!cout) {
+        cerr << "Error opening file: " << filename << endl;
+        return EXIT_FAILURE;
+    }
+
+    return Create_TrgStatus(RunId);
 }
