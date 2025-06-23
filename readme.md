@@ -4,6 +4,13 @@
 - All parameters can be modified and accessed in the get_XX() functions implemented in the headers files
 - RunId is "Run" + time from epoch
 
+# Commandes
+
+```
+make
+```
+to create exec file
+
 ```
 make clear
 ```
